@@ -1,15 +1,28 @@
-import React from 'react'
-import Sample from './components/Sample'
-import New from './components/New'
-import Childcomp from './components/Childcomp'
-import ParentComp from './components/ParentComp'
-import Counter from './components/Counter'
+
+import ArrayTask from './components/ArrayTask'
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
+import Home from './components/Home'
+import About from './components/About'
+import Contact from './components/Contact'
+
 
 const App = () => {
   return (
-    <>
-<Counter></Counter>
-    </>
+<>
+<BrowserRouter>
+    <nav>
+      link to <Link to="/">Home</Link>
+      link to <Link to="/about">About</Link>
+      link to <Link to="/contact">Contact</Link>
+    </nav>
+
+  <Routes>
+    <Route path="/" element={<Home />} />
+    <Route path="/about" element={<About />} />
+    <Route path="/contact" element={<Contact />} />
+  </Routes>
+</BrowserRouter>
+</>
   )
 }
 
